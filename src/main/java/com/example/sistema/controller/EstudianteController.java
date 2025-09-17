@@ -1,9 +1,9 @@
-package com.example.SistemaDeAprendizaje.controller;
+package com.example.sistema.controller;
 
-import com.example.SistemaDeAprendizaje.model.Estudiante;
+import com.example.sistema.model.Estudiante;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import com.example.SistemaDeAprendizaje.service.EstudianteService;
+import com.example.sistema.service.EstudianteService;
 
 import java.util.List;
 
@@ -34,6 +34,11 @@ public class EstudianteController {
     @DeleteMapping("/{id}")
     public void eliminarEstudiante(@PathVariable Long id) {
         estudianteService.eliminarPorId(id);
+    }
+
+    @GetMapping("/ping")
+    public String ping() {
+        return "Controlador activo";
     }
 
 }

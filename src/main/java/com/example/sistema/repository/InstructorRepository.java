@@ -1,6 +1,6 @@
-package com.example.SistemaDeAprendizaje.repository;
+package com.example.sistema.repository;
 
-import com.example.SistemaDeAprendizaje.model.Instructor;
+import com.example.sistema.model.Instructor;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface InstructorRepository extends JpaRepository<Instructor, Long> {}

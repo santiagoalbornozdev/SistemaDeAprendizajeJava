@@ -1,4 +1,4 @@
-package com.example.SistemaDeAprendizaje.model;
+package com.example.sistema.model;
 
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;

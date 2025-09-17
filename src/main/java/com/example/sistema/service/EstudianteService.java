@@ -1,9 +1,9 @@
-package com.example.SistemaDeAprendizaje.service;
+package com.example.sistema.service;
 
-import com.example.SistemaDeAprendizaje.model.Estudiante;
+import com.example.sistema.model.Estudiante;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.example.SistemaDeAprendizaje.repository.EstudianteRepository;
+import com.example.sistema.repository.EstudianteRepository;
 
 import java.util.List;
 import java.util.Optional;
