@@ -1,0 +1,13 @@
+package com.example.SistemaDeAprendizaje;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class SistemaDeAprendizajeApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}
