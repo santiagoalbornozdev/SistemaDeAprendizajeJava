@@ -2,7 +2,9 @@ package com.example.sistema.controller;
 
 import com.example.sistema.model.Curso;
 import com.example.sistema.model.Estudiante;
+import com.example.sistema.model.Instructor;
 import com.example.sistema.service.CursoService;
+import com.example.sistema.service.InstructorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,6 +15,9 @@ import java.util.List;
 public class CursoController {
     @Autowired
     private CursoService cursoService;
+    private InstructorService instructorService;
+
+
 
     //creo curso
     @PostMapping
@@ -37,5 +42,12 @@ public class CursoController {
         cursoService.eliminarPorId(id);
     }
 
-
+    //vincular curso con instructor
+    @PostMapping("/{idCurso}/asignar-instructor/{idInstructor}")
+    public Curso asignarInstructor(@PathVariable Long idCurso, @PathVariable Long idInstructor) {
+        Curso curso = cursoService.buscarPorId(idCurso).orElseThrow();
+        Instructor instructor = instructorService.buscarPorId(idInstructor).orElseThrow();
+        curso.setInstructor(instructor);
+        return cursoService.guardarCurso(curso);
+    }
 }

@@ -1,6 +1,8 @@
 package com.example.sistema.controller;
 
 import com.example.sistema.model.Estudiante;
+import com.example.sistema.model.Evaluacion;
+import com.example.sistema.service.EvaluacionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.example.sistema.service.EstudianteService;

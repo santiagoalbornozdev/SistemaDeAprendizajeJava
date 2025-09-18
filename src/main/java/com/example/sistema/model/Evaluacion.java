@@ -20,6 +20,12 @@ public class Evaluacion {
     @JoinColumn(name = "resultado_id")
     private Resultado resultado;
 
+    //vincular con evaluacion
+    @ManyToOne
+    @JoinColumn(name = "estudiante_id")
+    private Estudiante estudiante;
+
+
     public Evaluacion() {
     }
 
@@ -59,5 +65,14 @@ public class Evaluacion {
 
     public void setResultado(Resultado resultado) {
         this.resultado = resultado;
+    }
+
+    //vincular evaluacion
+    public Estudiante getEstudiante() {
+        return estudiante;
+    }
+
+    public void setEstudiante(Estudiante estudiante) {
+        this.estudiante = estudiante;
     }
 }
