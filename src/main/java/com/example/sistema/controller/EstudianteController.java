@@ -31,6 +31,14 @@ public class EstudianteController {
     public Estudiante obtenerEstudiante(@PathVariable Long id) {
         return estudianteService.buscarPorId(id).orElse(null);
     }
+    @PutMapping("/{id}")
+    public Estudiante actualizarEstudiante(@PathVariable Long id, @RequestBody Estudiante estudianteActualizado) {
+        Estudiante estudiante = estudianteService.buscarPorId(id).orElseThrow();
+        estudiante.setNombre(estudianteActualizado.getNombre());
+        estudiante.setNivelInicial(estudianteActualizado.getNivelInicial());
+        estudiante.setEstiloAprendizaje(estudianteActualizado.getEstiloAprendizaje());
+        return estudianteService.guardarEstudiante(estudiante);
+    }
 
     // 4. Eliminar estudiante por ID
     @DeleteMapping("/{id}")
